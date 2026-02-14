@@ -7,6 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
+    "lint": "pnpm eslint",
+    "lint:fix": "pnpm eslint --fix",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
@@ -24,6 +26,7 @@
     "nuxt": "^4.3.1",
     "nuxt-og-image": "5.1.13",
     "vue": "^3.5.28",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "typescript": "^5.9.3"
   }
 }
