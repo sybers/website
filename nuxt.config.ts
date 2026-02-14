@@ -16,6 +16,17 @@ export default defineNuxtConfig({
     'nuxt-og-image'
   ],
 
+  eslint: {
+    config: {
+      stylistic: {
+        indent: 2,
+        semi: true,
+        arrowParens: true,
+        braceStyle: '1tbs',
+      },
+    },
+  },
+
   app: {
     head: {
       title: 'Stanyslas Bres',
@@ -25,6 +36,8 @@ export default defineNuxtConfig({
       },
     }
   },
+
+  css: ['~/assets/css/main.css'],
 
   runtimeConfig: {
     public: {

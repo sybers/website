@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Stanyslas Bres',
+  title: 'Hey 👋',
   description: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
   ogTitle: 'Stanyslas Bres',
   ogDescription: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
