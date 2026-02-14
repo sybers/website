@@ -1,13 +1,19 @@
+<script setup lang="ts">
+const route = useRoute();
+const isBlogPost = computed(() => route.name === 'blog-rkey');
+
+</script>
 <template>
   <div>
     <AppHeader />
-    <h1>Blog</h1>
-    <p class="blog-links">
-      <a href="https://bsky.app/profile/sybers.fr" target="_blank">Bluesky</a>
-      ·
-      <a href="https://whtwnd.com/sybers.fr" target="_blank">WhTwnd</a>
-    </p>
+    <template v-if="!isBlogPost">
+      <h1>Blog</h1>
+    </template>
+    <template v-else>
+      <RouterLink to="/blog" class="back-to-blog">← Back to blog</RouterLink>
+    </template>
     <slot />
+    <BlogFooter />
   </div>
 </template>
 
@@ -16,5 +22,13 @@
   color: var(--text-muted);
   font-size: 0.85em;
   margin-top: 0;
+}
+
+.back-to-blog {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  padding-top: 2em;
+  display: block;
+  text-decoration: none;
 }
 </style>

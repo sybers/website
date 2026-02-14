@@ -1,3 +1,13 @@
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Stanyslas Bres',
+  description: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
+  ogTitle: 'Stanyslas Bres',
+  ogDescription: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
+  ogType: 'website',
+});
+</script>
+
 <template>
   <div>
     <h1>Hello, I’m sybers 👋</h1>

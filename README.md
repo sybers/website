@@ -1,75 +1,35 @@
-# Nuxt Minimal Starter
+# sybers.fr
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal website and blog of [sybers](https://sybers.fr).
+
+Built with [Nuxt](https://nuxt.com/), blog posts are fetched from the [AT Protocol](https://atproto.com/) and written using the [WhiteWind](https://whtwnd.com/) lexicons.
 
 ## Setup
 
-Make sure to install dependencies:
-
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Copy the `.env.example` file to `.env` and fill in the values:
 
 ```bash
-# npm
-npm run dev
+cp .env.example .env
+```
 
-# pnpm
+## Development
+
+```bash
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
+## Build
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview the production build locally:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

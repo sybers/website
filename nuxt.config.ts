@@ -14,5 +14,26 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/robots',
     'nuxt-og-image'
-  ]
+  ],
+
+  app: {
+    head: {
+      title: 'Stanyslas Bres',
+      titleTemplate: '%s — Stanyslas Bres',
+      htmlAttrs: {
+        lang: 'en',
+      },
+    }
+  },
+
+  runtimeConfig: {
+    public: {
+      mode: 'production' as 'production' | 'development',
+      atproto: {
+        service: 'https://bsky.social',
+        repo: '',
+        collection: 'com.whtwnd.blog.entry',
+      }
+    }
+  }
 })

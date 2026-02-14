@@ -3,7 +3,7 @@ import "~/assets/css/main.css";
 </script>
 
 <template>
-  <NuxtLoadingIndicator />
+  <NuxtLoadingIndicator color="var(--links)" />
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>

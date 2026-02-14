@@ -1,7 +1,10 @@
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig();
+const atpConfig = runtimeConfig.public.atproto;
+
 const { data: avatarUrl } = await useAsyncData('bsky-avatar', async () => {
   const profile = await $fetch<{ avatar?: string }>('https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile', {
-    params: { actor: 'sybers.fr' },
+    params: { actor: atpConfig.repo },
   });
   return profile.avatar ?? null;
 });
@@ -20,14 +23,27 @@ const links = [
         :src="avatarUrl"
         alt="Profile picture"
         class="avatar"
-        width="32"
-        height="32"
+        width="36"
+        height="36"
       />
       <ul>
         <li v-for="link in links" :key="link.to">
           <RouterLink :to="link.to">
             {{ link.label }}
           </RouterLink>
+        </li>
+      </ul>
+      <div class="spacer"/>
+      <ul>
+        <li>
+          <a href="https://bsky.app/profile/sybers.fr" target="_blank">
+            <Icon size="1.5rem" name="mingcute:bluesky-social-line" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/sybers" target="_blank">
+            <Icon size="1.5rem" name="mingcute:github-line" />
+          </a>
         </li>
       </ul>
     </nav>
@@ -68,5 +84,14 @@ nav > ul > li > a.router-link-active {
 .avatar {
   border-radius: 50%;
   display: block;
+  transition: transform 175ms ease-in-out;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+}
+
+.spacer {
+  flex: 1;
 }
 </style>

@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-minimal",
+  "name": "@sybers/website",
   "type": "module",
   "private": true,
   "scripts": {
