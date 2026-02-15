@@ -58,6 +58,10 @@ const editLink = computed(() => {
 </script>
 
 <template>
+  <RouterLink
+    to="/blog"
+    class="back-to-blog"
+  >← Back to blog</RouterLink>
   <div>
     <h1 class="blog-post-title">
       {{ data?.title }}
@@ -79,6 +83,14 @@ const editLink = computed(() => {
 </template>
 
 <style scoped>
+.back-to-blog {
+  color: var(--text-muted);
+  font-size: 0.85em;
+  padding-top: 2em;
+  display: block;
+  text-decoration: none;
+}
+
 .blog-post-title {
   margin-bottom: 0;
 }

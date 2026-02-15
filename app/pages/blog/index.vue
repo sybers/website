@@ -8,7 +8,7 @@ const cursor = ref(data.value?.cursor);
 const loading = ref(false);
 
 const runtimeConfig = useRuntimeConfig();
-const isInDevelopment = runtimeConfig.public.mode === 'development';
+const isProduction = runtimeConfig.public.mode === 'production';
 const hasBlogPosts = computed(() => posts.value.length > 0);
 
 useInfiniteScroll(document, loadMore, {
@@ -33,6 +33,16 @@ async function loadMore() {
 </script>
 
 <template>
+  <div class="blog-header">
+    <h1>Latest Posts</h1>
+    <a
+      v-if="!isProduction"
+      :href="`https://whtwnd.com/${runtimeConfig.public.atproto.repo}/edit`"
+      target="_blank"
+    >
+      (create)
+    </a>
+  </div>
   <div
     v-if="hasBlogPosts"
     class="posts"
@@ -49,7 +59,7 @@ async function loadMore() {
   </div>
   <div v-else>
     <p
-      v-if="isInDevelopment"
+      v-if="!isProduction"
       key="dev"
     >
       No posts found
@@ -66,6 +76,13 @@ async function loadMore() {
 </template>
 
 <style scoped>
+.blog-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
 .posts {
   display: flex;
   flex-direction: column;
