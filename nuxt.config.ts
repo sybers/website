@@ -45,6 +45,11 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css', '~/assets/css/shiki.css'],
 
+  site: {
+    name: 'Stanyslas Bres',
+    url: 'https://sybers.fr',
+  },
+
   mdc: {
     highlight: {
       theme: {

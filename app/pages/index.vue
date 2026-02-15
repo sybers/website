@@ -6,6 +6,13 @@ useSeoMeta({
   ogDescription: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
   ogType: 'website',
 });
+
+defineOgImageComponent('Default', {
+  title: 'Stanyslas Bres',
+  description: 'Software engineer, building smooth user-friendly experiences.',
+}, {
+  fonts: ['Space Mono:400', 'Space Mono:700'],
+});
 </script>
 
 <template>

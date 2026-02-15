@@ -17,10 +17,18 @@ if (!data.value) {
 
 useSeoMeta({
   title: data.value?.title,
-  description: data.value?.content,
+  description: 'Read this blog post by Stanyslas Bres.',
   ogTitle: data.value?.title,
-  ogDescription: data.value?.content,
+  ogDescription: 'Read this blog post by Stanyslas Bres.',
   ogType: 'article',
+});
+
+defineOgImageComponent('BlogPost', {
+  title: data.value?.title,
+  readingTime: data.value?.readingTime,
+  date: formatDate(data.value?.createdAt),
+}, {
+  fonts: ['Space Mono:400', 'Space Mono:700'],
 });
 
 const visibilityLabel = computed(() => {

@@ -8,6 +8,13 @@ useSeoMeta({
   ogDescription: 'Blog posts by Stanyslas Bres.',
   ogType: 'website',
 });
+
+defineOgImageComponent('Default', {
+  title: 'Blog',
+  description: 'Blog posts by Stanyslas Bres.',
+}, {
+  fonts: ['Space Mono:400', 'Space Mono:700'],
+});
 </script>
 
 <template>
