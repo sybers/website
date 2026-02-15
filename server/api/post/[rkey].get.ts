@@ -20,7 +20,7 @@ export default defineEventHandler(async (event) => {
 
   const { data } = await atpAgent.com.atproto.repo.getRecord({
     repo: atpConfig.repo,
-    collection: atpConfig.collection,
+    collection: atpConfig.postsCollection,
     rkey,
   });
 

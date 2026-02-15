@@ -27,6 +27,7 @@ defineOgImageComponent('BlogPost', {
   title: data.value?.title,
   readingTime: data.value?.readingTime,
   date: formatDate(data.value?.createdAt),
+  siteName: useSiteName(),
 }, {
   fonts: ['Space Mono:400', 'Space Mono:700'],
 });

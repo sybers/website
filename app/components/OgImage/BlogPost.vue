@@ -3,6 +3,7 @@ defineProps<{
   title: string;
   readingTime: string;
   date: string;
+  siteName: string;
 }>();
 </script>
 
@@ -22,7 +23,7 @@ defineProps<{
       </h1>
     </div>
     <div class="flex justify-between items-end text-xl text-gray-500 relative z-10">
-      <span>sybers.fr</span>
+      <span>{{ siteName }}</span>
       <span>{{ date }} · {{ readingTime }}</span>
     </div>
   </div>

@@ -2,6 +2,7 @@
 withDefaults(defineProps<{
   title?: string;
   description?: string;
+  siteName: string;
 }>(), {
   title: 'Stanyslas Bres',
   description: 'Software engineer',
@@ -24,7 +25,7 @@ withDefaults(defineProps<{
       </p>
     </div>
     <div class="flex justify-between items-end text-xl text-gray-500 relative z-10">
-      <span>sybers.fr</span>
+      <span>{{ siteName }}</span>
     </div>
   </div>
 </template>

@@ -1,15 +1,16 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Hey 👋',
-  description: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
+  description: 'Software engineer, passionate about building smooth, user-friendly software experiences.',
   ogTitle: 'Stanyslas Bres',
-  ogDescription: 'Software engineer at Indy, passionate about building smooth, user-friendly software experiences.',
+  ogDescription: 'Software engineer, passionate about building smooth, user-friendly software experiences.',
   ogType: 'website',
 });
 
 defineOgImageComponent('Default', {
   title: 'Stanyslas Bres',
   description: 'Software engineer, building smooth user-friendly experiences.',
+  siteName: useSiteName(),
 }, {
   fonts: ['Space Mono:400', 'Space Mono:700'],
 });

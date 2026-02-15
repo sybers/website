@@ -13,7 +13,7 @@ export default defineEventHandler(async (event) => {
 
   const res = await agent.com.atproto.repo.listRecords({
     repo: atpConfig.repo,
-    collection: atpConfig.collection,
+    collection: atpConfig.postsCollection,
     limit: Number(limit),
     cursor: cursor as string | undefined,
   });

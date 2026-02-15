@@ -12,6 +12,7 @@ useSeoMeta({
 defineOgImageComponent('Default', {
   title: 'Blog',
   description: 'Blog posts by Stanyslas Bres.',
+  siteName: useSiteName(),
 }, {
   fonts: ['Space Mono:400', 'Space Mono:700'],
 });

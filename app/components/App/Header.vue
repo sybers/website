@@ -1,7 +1,6 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
 const atpConfig = runtimeConfig.public.atproto;
-const socialConfig = runtimeConfig.public.social;
 
 const { data: avatarUrl } = await useAsyncData('bsky-avatar', async () => {
   const profile = await $fetch<{ avatar?: string }>('https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile', {
@@ -14,6 +13,8 @@ const links = [
   { label: 'Home', to: '/' },
   { label: 'Blog', to: '/blog' },
 ];
+
+const { socialLinks } = useSocialLinks();
 </script>
 
 <template>
@@ -39,25 +40,17 @@ const links = [
       </ul>
       <div class="spacer" />
       <ul>
-        <li>
+        <li
+          v-for="link in socialLinks"
+          :key="link.to"
+        >
           <a
-            :href="`https://bsky.app/profile/${atpConfig.repo}`"
+            :href="link.to"
             target="_blank"
           >
             <Icon
               size="1.5rem"
-              name="mingcute:bluesky-social-line"
-            />
-          </a>
-        </li>
-        <li>
-          <a
-            :href="`https://github.com/${socialConfig.github}`"
-            target="_blank"
-          >
-            <Icon
-              size="1.5rem"
-              name="mingcute:github-line"
+              :name="link.icon"
             />
           </a>
         </li>

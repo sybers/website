@@ -45,11 +45,6 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css', '~/assets/css/shiki.css'],
 
-  site: {
-    name: 'Stanyslas Bres',
-    url: 'https://sybers.fr',
-  },
-
   mdc: {
     highlight: {
       theme: {
@@ -63,14 +58,16 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      mode: 'production' as 'production' | 'development',
+      mode: 'production',
       atproto: {
         service: 'https://bsky.social',
         repo: '',
-        collection: 'com.whtwnd.blog.entry',
+        postsCollection: 'com.whtwnd.blog.entry',
       },
       social: {
-        github: ''
+        github: '',
+        bluesky: '',
+        linkedin: '',
       },
     },
   },
