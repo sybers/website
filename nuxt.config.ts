@@ -25,7 +25,18 @@ export default defineNuxtConfig({
     },
   },
 
-  css: ['~/assets/css/main.css'],
+  css: ['~/assets/css/main.css', '~/assets/css/shiki.css'],
+
+  mdc: {
+    highlight: {
+      theme: {
+        default: 'rose-pine-dawn',
+        dark: 'aurora-x',
+      },
+      wrapperStyle: true,
+      langs: ['js', 'jsx', 'json', 'ts', 'tsx', 'vue', 'css', 'html', 'bash', 'md', 'mdc', 'yaml', 'dotenv'],
+    },
+  },
 
   runtimeConfig: {
     public: {
