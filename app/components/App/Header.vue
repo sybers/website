@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
 const atpConfig = runtimeConfig.public.atproto;
+const socialConfig = runtimeConfig.public.social;
 
 const { data: avatarUrl } = await useAsyncData('bsky-avatar', async () => {
   const profile = await $fetch<{ avatar?: string }>('https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile', {
@@ -40,7 +41,7 @@ const links = [
       <ul>
         <li>
           <a
-            href="https://bsky.app/profile/sybers.fr"
+            :href="`https://bsky.app/profile/${atpConfig.repo}`"
             target="_blank"
           >
             <Icon
@@ -51,7 +52,7 @@ const links = [
         </li>
         <li>
           <a
-            href="https://github.com/sybers"
+            :href="`https://github.com/${socialConfig.github}`"
             target="_blank"
           >
             <Icon

@@ -69,6 +69,9 @@ export default defineNuxtConfig({
         repo: '',
         collection: 'com.whtwnd.blog.entry',
       },
+      social: {
+        github: ''
+      },
     },
   },
   compatibilityDate: '2025-07-15',
