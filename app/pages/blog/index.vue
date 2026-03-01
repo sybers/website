@@ -35,13 +35,24 @@ async function loadMore() {
 <template>
   <div class="blog-header">
     <h1>Latest Posts</h1>
-    <a
-      v-if="!isProduction"
-      :href="`https://whtwnd.com/${runtimeConfig.public.atproto.repo}/edit`"
-      target="_blank"
-    >
-      (create)
-    </a>
+    <div class="blog-header-actions">
+      <a
+        :href="`https://greengale.app/${runtimeConfig.public.atproto.repo}/rss`"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="RSS feed"
+        class="rss-link"
+      >
+        <Icon name="mingcute:rss-2-fill" />
+      </a>
+      <a
+        v-if="!isProduction"
+        :href="`https://whtwnd.com/${runtimeConfig.public.atproto.repo}/edit`"
+        target="_blank"
+      >
+        (create)
+      </a>
+    </div>
   </div>
   <div
     v-if="hasBlogPosts"
@@ -81,6 +92,25 @@ async function loadMore() {
   align-items: baseline;
   gap: 0.5rem;
   justify-content: space-between;
+}
+
+.blog-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rss-link {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.rss-link:hover {
+  color: var(--text-bright);
 }
 
 .posts {
