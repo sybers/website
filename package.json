@@ -23,10 +23,10 @@
     "@nuxtjs/robots": "5.7.0",
     "@nuxtjs/seo": "3.4.0",
     "@unocss/nuxt": "66.6.0",
-    "@vueuse/nuxt": "14.2.1",
+    "@vueuse/nuxt": "14.3.0",
     "nuxt": "^4.3.1",
     "nuxt-og-image": "5.1.13",
-    "vue": "3.5.28",
+    "vue": "3.5.33",
     "vue-router": "4.6.4",
     "typescript": "^5.9.3"
   }
