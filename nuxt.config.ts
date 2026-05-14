@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
+import {
+  DEFAULT_AVATAR_CACHE_TTL_SECONDS,
+  DEFAULT_BLOG_CACHE_TTL_SECONDS,
+} from './shared/cache-defaults';
+
 function createUmamiScript(env: Record<string, string | undefined>) {
   if (env.NODE_ENV !== 'production') return undefined;
 
@@ -57,6 +62,11 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    cachePurgeToken: '',
+    cache: {
+      blogTtlSeconds: DEFAULT_BLOG_CACHE_TTL_SECONDS,
+      avatarTtlSeconds: DEFAULT_AVATAR_CACHE_TTL_SECONDS,
+    },
     public: {
       mode: 'production',
       atproto: {
@@ -68,6 +78,14 @@ export default defineNuxtConfig({
         github: '',
         bluesky: '',
         linkedin: '',
+      },
+    },
+  },
+
+  nitro: {
+    storage: {
+      siteMeta: {
+        driver: 'memory',
       },
     },
   },

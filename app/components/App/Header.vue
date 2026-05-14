@@ -1,12 +1,7 @@
 <script setup lang="ts">
-const runtimeConfig = useRuntimeConfig();
-const atpConfig = runtimeConfig.public.atproto;
-
 const { data: avatarUrl } = await useAsyncData('bsky-avatar', async () => {
-  const profile = await $fetch<{ avatar?: string }>('https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile', {
-    params: { actor: atpConfig.repo },
-  });
-  return profile.avatar ?? null;
+  const res = await $fetch<{ avatar: string | null }>('/api/bluesky/avatar');
+  return res.avatar;
 });
 
 const links = [

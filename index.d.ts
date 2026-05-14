@@ -1,4 +1,24 @@
 declare module 'nuxt/schema' {
+  interface RuntimeConfig {
+    /**
+     * Secret token for `POST /api/cache/purge` (header `x-cache-token`).
+     * @default ""
+     */
+    cachePurgeToken: string;
+    cache: {
+      /**
+       * Nitro cache TTL for blog ATProto responses (seconds).
+       * @default 43200 (12 hours)
+       */
+      blogTtlSeconds: number;
+      /**
+       * Nitro cache TTL for Bluesky avatar API (seconds).
+       * @default 86400 (24 hours)
+       */
+      avatarTtlSeconds: number;
+    };
+  }
+
   interface PublicRuntimeConfig {
     /**
      * Environment mode
