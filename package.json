@@ -13,8 +13,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@atproto/api": "^0.18.21",
-    "@atproto/syntax": "^0.4.3",
+    "@atproto/api": "0.18.21",
+    "@atproto/syntax": "0.4.3",
     "@nuxt/eslint": "1.15.1",
     "@nuxt/fonts": "0.13.0",
     "@nuxt/icon": "2.2.1",
