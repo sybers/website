@@ -49,6 +49,13 @@
       ]
     },
     {
+      "description": "Keep h3 on v1: Nitro 2 and the Nuxt modules relying on it break with h3 v2",
+      "matchPackageNames": [
+        "h3"
+      ],
+      "allowedVersions": "<2"
+    },
+    {
       "description": "Automerge non-major dev dependencies",
       "matchDepTypes": [
         "devDependencies"
