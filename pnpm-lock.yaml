@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@atproto/api':
-        specifier: ^0.18.21
+        specifier: 0.18.21
         version: 0.18.21
       '@atproto/syntax':
-        specifier: ^0.4.3
+        specifier: 0.4.3
         version: 0.4.3
       '@nuxt/eslint':
         specifier: 1.15.1
